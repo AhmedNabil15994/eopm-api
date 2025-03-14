@@ -23,7 +23,6 @@ class UpaymentGateway implements PaymentGatewayInterface
             'mobile' => $order->user->calling_code  . $order->user->mobile,
         ];
 
-
         $extraMerchantsData = array();
         $extraMerchantsData['amounts'][0] = $order->total;
         $extraMerchantsData['charges'][0] = $charges;
