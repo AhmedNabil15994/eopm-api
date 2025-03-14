@@ -28,3 +28,8 @@ then seed database with ready seeders <br />
 ```
 php artisan db:seed
 ```
+
+pagination size depends on PER_PAGE please add it inside .env file
+```
+PER_PAGE=15
+```
