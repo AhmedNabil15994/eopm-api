@@ -4,7 +4,7 @@ principles and extensibility. The system should allow adding new payment gateway
 minimal effort.
 
 usign Repository Desing Pattern for modular structure <br />
-it depends on Strategy Design Pattern for using differend payment gateways.
+it depends on Strategy Design Pattern for using different payment gateways.
 
 # Setup
 first run composer install to bring all packages
@@ -43,4 +43,13 @@ in Conosle/Commands you'll find Command called ChangePendingOrderStatus make sur
 BACK_PRODUCT_DURATION=15
 ```
 
+# Payment Gateways Extensibility
+We'll implement the strategy pattern to allow easy integration of new payment gateways. <br />
+first of all you have to add payment gateway configuration inside .env file based on test & live modes <br />
+add your payment gateway name in supported payments array inside config/app.php
+```
+....
+'supported_payments' => ['credit_card', 'paypal', 'cash', 'wallet','knet','upayment','your_new_payment_name'],
+...
 
+```
