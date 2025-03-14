@@ -44,8 +44,8 @@ BACK_PRODUCT_DURATION=15
 ```
 
 # Payment Gateways Extensibility
-We'll implement the strategy pattern to allow easy integration of new payment gateways. <br />
-first of all you have to add payment gateway configuration inside .env file based on test & live modes <br />
+We'll implement the strategy pattern to allow easy integration of new payment gateways. <br /><br />
+first of all you have to add payment gateway configuration inside .env file based on test & live modes <br /><br />
 add your payment gateway name in supported payments array inside config/app.php
 ```
 ....
