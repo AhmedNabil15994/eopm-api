@@ -34,7 +34,13 @@ pagination size depends on PER_PAGE please add it inside .env file
 PER_PAGE=15
 ```
 
-Reserved order products qty could be back to stock if there's no any success payment assigned to order, it depends on the minutes interval you spcified in .env 
+## - Change Pending Order
+
+Reserved order products qty could be back to stock if there's no any success payment assigned to order, it depends on the minutes interval you spcified in .env <br /> 
+in Conosle/Commands you'll find Command called ChangePendingOrderStatus make sure to schedule it on your cronjob.
+
 ```
 BACK_PRODUCT_DURATION=15
 ```
+
+
