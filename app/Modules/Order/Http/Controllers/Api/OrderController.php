@@ -117,7 +117,7 @@ class OrderController extends ApiController
 
         return $this->response([
             'order_id'  => $order->id,
-        ],__('order::api.order_statuses.status.pending'));
+        ],__('order::api.order_statuses.status.confirmed'));
     }
 
     public function delete(Request $request,$id)
