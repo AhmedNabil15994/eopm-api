@@ -2,11 +2,13 @@
 
 namespace Modules\Transaction\Entities;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Order\Entities\Order;
 
 class Transaction extends Model
 {
+    use HasFactory;
 
     protected $fillable = [
       'auth',

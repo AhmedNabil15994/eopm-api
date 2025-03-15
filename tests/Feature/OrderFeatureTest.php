@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
-use App\Models\User;
+use Modules\User\Entities\User;
 use Modules\Order\Entities\Order;
 use Modules\Product\Entities\Product;
 use Tymon\JWTAuth\Facades\JWTAuth;

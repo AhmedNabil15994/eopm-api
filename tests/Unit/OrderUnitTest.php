@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Models\User;
+use Modules\User\Entities\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Modules\Cart\Entities\DatabaseStorageModel;
 use Modules\Cart\Repositories\CartRepository;

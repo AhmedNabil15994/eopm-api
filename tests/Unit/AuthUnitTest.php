@@ -6,7 +6,7 @@ namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
-use App\Models\User;
+use Modules\User\Entities\User;
 use Illuminate\Support\Facades\Hash;
 
 class AuthUnitTest extends TestCase

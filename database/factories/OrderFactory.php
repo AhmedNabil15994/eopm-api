@@ -22,7 +22,7 @@ class OrderFactory extends Factory
             'discount' => fake()->randomFloat(3,0),
             'tax' => fake()->randomFloat(3,0),
             'total' => fake()->randomFloat(3),
-            'order_status_id' => random_int(1,5),
+            'order_status_id' => $this->faker->unique()->randomElement([1,2,3,4,5]),
             'payment_method' => fake()->text(),
             'user_id' => User::factory(),
         ];
