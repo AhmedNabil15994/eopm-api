@@ -18,9 +18,9 @@ class UpaymentGateway implements PaymentGatewayInterface
         $ibans   = env('UPAYMENT.'.$payment_mode.'.IBANS');
 
         $user = [
-            'name' => $order->user->name ,
-            'email' => $order->user->email ,
-            'mobile' => $order->user->calling_code  . $order->user->mobile,
+            'name' => $order->user->name ?? '',
+            'email' => $order->user->email ?? '',
+            'mobile' => $order->user->calling_code ?? '' . $order->user->mobile ?? '',
         ];
 
         $extraMerchantsData = array();
