@@ -4,7 +4,7 @@ principles and extensibility. The system should allow adding new payment gateway
 minimal effort.
 
 By using modular structure <br />
-it depends on Strategy Design Pattern for using different payment gateways.
+also it depends on Strategy Design Pattern for using different payment gateways.
 
 # Requirements
 
