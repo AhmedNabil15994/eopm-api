@@ -14,8 +14,4 @@ class Product extends Model
     protected $with = [];
     protected $guarded = ['id'];
 
-    public function orders()
-    {
-//        return $this->belongsToMany(Order::class, "order_products", "product_id", "order_id");
-    }
 }
