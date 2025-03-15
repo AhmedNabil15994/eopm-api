@@ -6,6 +6,16 @@ minimal effort.
 usign Repository Desing Pattern for modular structure <br />
 it depends on Strategy Design Pattern for using different payment gateways.
 
+# Requirements
+
+```
+"require": {
+  "php": "^8.2",
+  "laravel/framework": "^12.0",
+  "tymon/jwt-auth": "^2.2"
+}
+```
+
 # Setup
 first run composer install to bring all packages
 
