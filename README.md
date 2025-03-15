@@ -81,7 +81,7 @@ public function createTransaction($order, $request,$method,$result='pending')
 }
 ```
 
-for testing unit and feature test. <br />
+for testing unit and feature tests. <br />
 ```
 php artisan test
 ```
