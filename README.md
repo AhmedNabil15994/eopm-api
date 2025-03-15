@@ -3,7 +3,7 @@ a Laravel-based API for managing orders and payments, with a focus on clean code
 principles and extensibility. The system should allow adding new payment gateways with
 minimal effort.
 
-usign Repository Desing Pattern for modular structure <br />
+usign Repository Design Pattern for modular structure <br />
 it depends on Strategy Design Pattern for using different payment gateways.
 
 # Requirements
