@@ -63,6 +63,10 @@ class OrderRepository
             ['instance' , 'user'],
             ['identifier' , auth('api')->id()]
         ])->first();
+
+        if (!$cart) {
+            throw new \Exception('Cart is empty or not found for the user.');
+        }
         return $cart;
     }
 

@@ -2,6 +2,7 @@
 
 namespace Modules\Order\Entities;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use IlluminateAgnostic\Collection\Support\Carbon;
@@ -13,6 +14,7 @@ class Order extends Model
 {
     use SoftDeletes ;
     use ScopesTrait;
+    use HasFactory;
 
     protected $fillable = [
         'total',
