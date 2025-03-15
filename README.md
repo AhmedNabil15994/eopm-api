@@ -53,3 +53,30 @@ add your payment gateway name in supported payments array inside config/app.php
 ...
 
 ```
+
+Create your payment service class inside App/Services which implements PaymentGatewayInterface. <br />
+In App/Services/PaymentGatewayService add new payment declarion inside gateways array in construct function 
+```
+....
+$this->gateways = [
+      'your_new_payment_name' => new NewAddedPaymentGateway(),
+  ];
+...
+
+```
+now you can override the following:
+## - processPayment function to allow you do logic for processing new payment gateway. <br />
+```
+public function processPayment($order, $method)
+{
+      // Logic for processing new payment payment
+}
+```
+
+## - createTransaction function to allow you to associate payments to order using new payment gateway. <br />
+```
+public function createTransaction($order, $request,$method,$result='pending')
+{
+      // Logic for creating order transaction based on result
+}
+```
