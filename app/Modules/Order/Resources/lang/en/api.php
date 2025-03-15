@@ -77,6 +77,7 @@ return [
             'pending'   => 'Pending',
             'in-complete'   => 'In-Complete',
             'in_review'   => 'In-Review',
+            'confirmed'   => 'Confirmed',
         ],
         'payments'  => [
             'moyasar'   => 'Moyasar',

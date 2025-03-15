@@ -79,6 +79,7 @@ return [
             'pending'   => 'جاري الدفع',
             'in-complete'   => 'جاري المعالجه',
             'in_review'   => 'تحت المراجعه',
+            'confirmed'     => 'تمت المراجعه',
         ],
         'payments'  => [
             'moyasar'   => 'ميسر',

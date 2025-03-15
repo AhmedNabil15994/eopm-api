@@ -94,10 +94,9 @@ class OrderController extends ApiController
                         'payment_url' => $payment['url'],
                         'order_id'  => $order->id,
                     ]);
-                } else {
-                    return $this->error(__('cart::api.cart.invalid_payment'));
                 }
             }
+            return $this->error(__('cart::api.cart.invalid_payment'));
         }
 
         return $this->response(OrderResource::make($order));
