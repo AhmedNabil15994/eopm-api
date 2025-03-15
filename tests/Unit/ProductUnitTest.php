@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use Modules\Product\Entities\Product;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProductUnitTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * Test product creation.
      */
     public function testItCanCreateAProduct(): void
     {
-        $product = Product::factory()->create([
+        $product = Product::factory()->count(1)->create([
             'name' => 'Test Product',
             'price' => 100.00,
             'qty' => 50,

@@ -3,14 +3,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthFeatureTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * Test user can register successfully.
@@ -50,7 +49,7 @@ class AuthFeatureTest extends TestCase
      */
     public function testUserCanLogin(): void
     {
-        $user = User::factory()->create([
+        $user = User::factory()->count(1)->create([
             'email' => 'testuser@example.com',
             'password' => bcrypt('password123'),
         ]);
@@ -73,7 +72,7 @@ class AuthFeatureTest extends TestCase
      */
     public function testUserLoginFailsWithIncorrectCredentials(): void
     {
-        User::factory()->create([
+        User::factory()->count(1)->create([
             'email' => 'testuser@example.com',
             'password' => bcrypt('password123'),
         ]);

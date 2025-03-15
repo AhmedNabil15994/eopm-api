@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use Modules\Product\Entities\Product;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProductFeatureTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * Test fetching the product list.
      */
     public function testItCanListProducts(): void
     {
-        Product::factory()->count(3)->create();
+        Product::factory()->create();
 
         $response = $this->getJson('/api/catalog/products?per_page=10');
 

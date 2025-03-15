@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthUnitTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * Test user password is hashed correctly.
@@ -30,7 +30,7 @@ class AuthUnitTest extends TestCase
      */
     public function testUserAuthenticationWithCorrectCredentials(): void
     {
-        $user = User::factory()->create([
+        $user = User::factory()->count(1)->create([
             'email' => 'testuser@example.com',
             'password' => bcrypt('password123'),
         ]);
@@ -48,7 +48,7 @@ class AuthUnitTest extends TestCase
      */
     public function testUserAuthenticationFailsWithIncorrectCredentials(): void
     {
-        User::factory()->create([
+        User::factory()->count(1)->create([
             'email' => 'testuser@example.com',
             'password' => bcrypt('password123'),
         ]);
