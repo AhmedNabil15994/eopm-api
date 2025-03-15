@@ -80,3 +80,8 @@ public function createTransaction($order, $request,$method,$result='pending')
       // Logic for creating order transaction based on result
 }
 ```
+
+for testing unit and feature test. <br />
+```
+php artisan test
+```
