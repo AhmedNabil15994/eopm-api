@@ -65,7 +65,7 @@ $this->gateways = [
 
 ```
 now you can override the following:
-## - processPayment function to allow you do logic for processing new payment gateway. <br />
+## - processPayment function to allow you to do logic for processing new payment gateway. <br />
 ```
 public function processPayment($order, $method)
 {
