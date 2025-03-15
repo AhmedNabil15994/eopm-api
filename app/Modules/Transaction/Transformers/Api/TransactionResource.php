@@ -22,7 +22,7 @@ class TransactionResource extends JsonResource
             'payment_id'    => $this->payment_id,
             'tran_id'       => $this->tran_id,
             'result'        => $this->result,
-            'post_date'     => $this->postDate,
+            'post_date'     => $this->post_date,
             'ref'           => $this->ref,
             'track_id'      => $this->track_id,
             'order_id'      => $this->transaction_id,

@@ -91,11 +91,11 @@ class UpaymentGateway implements PaymentGatewayInterface
             'post_date' => now(),
         ];
 
-       if($result && $result !== 'pending'){
-           $dataArr['tran_id'] = $request->TranID ?? '';
-           $dataArr['ref'] = $request->Ref ?? '';
-           $dataArr['track_id'] =  $request->TrackID ?? '';
-           $dataArr['PaymentID'] =  $request->PaymentID ?? '';
+        if($result && $result !== 'pending'){
+            $dataArr['tran_id'] = $request->TranID ?? '';
+            $dataArr['ref'] = $request->Ref ?? '';
+            $dataArr['track_id'] =  $request->TrackID ?? '';
+            $dataArr['payment_id'] =  $request->PaymentID ?? '';
         }
 
         $order->transactions()->create($dataArr);
