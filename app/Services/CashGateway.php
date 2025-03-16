@@ -13,8 +13,6 @@ class CashGateway implements PaymentGatewayInterface
     }
 
     public function createTransaction($order, $request,$result='pending'){
-        $result = 'success';
-
         if($result == 'success'){
             $order->update(['order_status_id' => 2]); // change to success status
         }else{
