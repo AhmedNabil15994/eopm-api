@@ -3,7 +3,7 @@ namespace App\Services;
 
 interface PaymentGatewayInterface
 {
-    public function processPayment($order, $method);
+    public function processPayment($order);
 
-    public function createTransaction($order, $request,$method,$result='pending');
+    public function createTransaction($order, $request,$result='pending');
 }

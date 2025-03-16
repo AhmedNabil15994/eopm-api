@@ -4,7 +4,8 @@ use App\Services\PaymentGatewayService;
 
 class UpaymentGateway implements PaymentGatewayInterface
 {
-    public function processPayment($order, $method='upayment')
+    protected $method='upayment';
+    public function processPayment($order)
     {
         $payment_mode = strtoupper(env('UPAYMENT.MODE'));
         $white_labeled   = $payment_mode == 'TEST' ? true : false;
@@ -69,7 +70,7 @@ class UpaymentGateway implements PaymentGatewayInterface
         }
 
         if(isset($server_output['paymentURL']) && !empty($server_output['paymentURL'])){
-            $this->createTransaction($order,request(),$method,'pending');
+            $this->createTransaction($order,request(),'pending');
         }
 
         return ['status' => true, 'url' => $server_output['paymentURL']];
@@ -82,10 +83,10 @@ class UpaymentGateway implements PaymentGatewayInterface
         return $url;
     }
 
-    public function createTransaction($order, $request,$method,$result='pending'){
+    public function createTransaction($order, $request,$result='pending'){
         $dataArr = [
             'transaction_id' => $order->id,
-            'method'    => $method,
+            'method'    => $this->method,
             'result' => $result,
             'auth' => $order->user_id,
             'post_date' => now(),

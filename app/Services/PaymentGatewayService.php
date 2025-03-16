@@ -42,6 +42,6 @@ class PaymentGatewayService
         }
 
         $gateway = $this->gateways[$payment_method];
-        return $gateway->createTransaction($order,$request, $payment_method,$status);
+        return $gateway->createTransaction($order,$request,$status);
     }
 }

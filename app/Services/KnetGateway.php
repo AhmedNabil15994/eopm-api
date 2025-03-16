@@ -4,14 +4,15 @@ use App\Services\PaymentGatewayService;
 
 class KnetGateway implements PaymentGatewayInterface
 {
-    public function processPayment($order, $method='knet')
+    protected $method = 'knet';
+    public function processPayment($order)
     {
-        return $method;
+        return $this->method;
 
         // Simulate knet payment logic
 //        $payment = Payment::create([
 //            'order_id' => $order->id,
-//            'payment_method' => 'knet',
+//            'payment_method' => $this->method',
 //            'status' => 'successful',
 //            'amount' => $data['amount'],
 //            'payment_id' => 'cc_' . uniqid(),
@@ -20,7 +21,7 @@ class KnetGateway implements PaymentGatewayInterface
 //        return $payment;
     }
 
-    public function createTransaction($order, $request,$method,$result='pending'){
+    public function createTransaction($order, $request,$result='pending'){
 
     }
 }

@@ -80,7 +80,7 @@ class OrderFeatureTest extends TestCase
         $response = $this->withHeaders($this->headers)->postJson("/api/orders/{$order->id}/accept");
 
         $response->assertStatus(200)
-            ->assertJson(['message' => 'Pending']);
+            ->assertJson(['message' => 'Confirmed']);
     }
 
     public function test_user_can_delete_order()

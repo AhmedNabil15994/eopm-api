@@ -4,14 +4,16 @@ use App\Services\PaymentGatewayService;
 
 class CreditCardGateway implements PaymentGatewayInterface
 {
-    public function processPayment($order, $method = 'credit_card')
+    protected $method = 'credit_card';
+
+    public function processPayment($order)
     {
-        return $method;
+        return $this->method;
 
         // Simulate credit card payment logic
 //        $payment = Payment::create([
 //            'order_id' => $order->id,
-//            'payment_method' => 'credit_card',
+//            'payment_method' => $this->method',
 //            'status' => 'successful',
 //            'amount' => $data['amount'],
 //            'payment_id' => 'cc_' . uniqid(),
@@ -20,7 +22,7 @@ class CreditCardGateway implements PaymentGatewayInterface
 //        return $payment;
     }
 
-    public function createTransaction($order, $request,$method,$result='pending'){
+    public function createTransaction($order, $request,$result='pending'){
 
     }
 }

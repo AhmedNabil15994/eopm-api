@@ -5,13 +5,14 @@ use Psy\Util\Str;
 
 class CashGateway implements PaymentGatewayInterface
 {
-    public function processPayment($order, $method='cash')
+    protected $method = 'cash';
+    public function processPayment($order)
     {
         // Simulate cash payment logic
-        return $this->createTransaction($order,request(),$method,'success');
+        return $this->createTransaction($order,request(),'success');
     }
 
-    public function createTransaction($order, $request,$method,$result='pending'){
+    public function createTransaction($order, $request,$result='pending'){
         $result = 'success';
 
         if($result == 'success'){
@@ -23,7 +24,7 @@ class CashGateway implements PaymentGatewayInterface
         $order->transactions()->create(
             [
                 'transaction_id' => $order->id,
-                'method'    => $method,
+                'method'    => $this->method,
                 'auth' => $order->user_id,
                 'tran_id' => rand(1,99999999).time(),
                 'result' => $result,

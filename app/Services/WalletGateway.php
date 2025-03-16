@@ -4,13 +4,14 @@ use App\Services\PaymentGatewayService;
 
 class WalletGateway implements PaymentGatewayInterface
 {
-    public function processPayment($order, $method = 'wallet')
+    protected $method='wallet';
+    public function processPayment($order)
     {
-        return $method;
+        return $this->method;
         // Simulate wallet payment logic
 //        $payment = Payment::create([
 //            'order_id' => $order->id,
-//            'payment_method' => 'wallet',
+//            'payment_method' => $this->method',
 //            'status' => 'successful',
 //            'amount' => $data['amount'],
 //            'payment_id' => 'cc_' . uniqid(),
@@ -19,7 +20,7 @@ class WalletGateway implements PaymentGatewayInterface
 //        return $payment;
     }
 
-    public function createTransaction($order, $request,$method,$result='pending'){
+    public function createTransaction($order, $request,$result='pending'){
 
     }
 }
