@@ -99,6 +99,6 @@ class UpaymentGateway implements PaymentGatewayInterface
             $dataArr['payment_id'] =  $request->PaymentID ?? '';
         }
 
-        $order->transactions()->create($dataArr);
+        return $order->transactions()->create($dataArr);
     }
 }

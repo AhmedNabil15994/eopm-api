@@ -19,7 +19,7 @@ class CashGateway implements PaymentGatewayInterface
             $order->update(['order_status_id' => 3]); // change to failed status
         }
 
-        $order->transactions()->create(
+        return $order->transactions()->create(
             [
                 'transaction_id' => $order->id,
                 'method'    => $this->method,
