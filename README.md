@@ -84,7 +84,7 @@ now you can override the following:
 ```
 public function processPayment($order)
 {
-      // Logic for processing new payment payment
+      // Logic for processing new payment
 }
 ```
 
