@@ -82,7 +82,7 @@ $this->gateways = [
 now you can override the following:
 ## - processPayment function to allow you to do logic for processing new payment gateway. <br />
 ```
-public function processPayment($order, $method)
+public function processPayment($order)
 {
       // Logic for processing new payment payment
 }
@@ -90,7 +90,7 @@ public function processPayment($order, $method)
 
 ## - createTransaction function to allow you to associate payments to order using new payment gateway. <br />
 ```
-public function createTransaction($order, $request,$method,$result='pending')
+public function createTransaction($order, $request,$result='pending')
 {
       // Logic for creating order transaction based on result
 }
