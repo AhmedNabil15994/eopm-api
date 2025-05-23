@@ -96,7 +96,7 @@ public function createTransaction($order, $request,$result='pending')
 }
 ```
 
-for testing unit and feature tests. <br />
+for testing unit and feature tests. <br/>
 ```
 php artisan test
 ```
