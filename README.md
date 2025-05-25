@@ -1,4 +1,5 @@
 # Extendable Order and Payment Management API
+
 a Laravel-based API for managing orders and payments, with a focus on clean code
 principles and extensibility. The system should allow adding new payment gateways with
 minimal effort.
